@@ -1,0 +1,75 @@
+<nav class="navbar navbar-expand-lg  bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand text-white" href="#"><i>machstatz assignment</i></a>
+  </div>
+</nav>
+
+<!--navbr end-->
+
+<div class="container">
+
+  <mat-tab-group>
+
+    <!--tab first start-->
+
+    <mat-tab label="planets">
+        
+
+        <table class="table">
+          <thead>
+            <tr class="text-center">
+              
+              <th scope="col">id</th>
+              <th scope="col">Favourited</th>
+              <th scope="col">name</th>
+              <th scope="col">click on star and make your favourite list</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+              <tr class="text-center" *ngFor="let list of planetlist,index as i">
+                  <td>{{list.id}}</td>
+                  <td>{{list.isFavourite}}</td>
+                  <td>{{list.name}}</td>
+                  <td> <mat-icon (click)="seletfavorite(list,res,i)" color="dark" #res>grade</mat-icon></td>
+              </tr>
+             
+          </tbody>
+        </table>
+
+    </mat-tab>
+
+    <!--tab first end-->
+    <!--tab second start-->
+    <mat-tab label="favourite planets">
+      
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            
+            <th scope="col">id</th>
+            <th scope="col">Favourited</th>
+            <th scope="col">name</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+            <tr *ngFor="let favlist of favoritelist,index as i">
+                <td>{{favlist.id}}</td>
+                <td>{{favlist.isFavourite}}</td>
+                <td>{{favlist.name}}</td>
+            </tr>
+           
+        </tbody>
+      </table>
+
+    
+    </mat-tab>
+    <!--tab second end-->
+   
+  </mat-tab-group>
+
+</div>
+
+
+
